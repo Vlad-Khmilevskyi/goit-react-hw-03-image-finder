@@ -2,7 +2,7 @@ import { Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import { AppStyled } from './App.module';
 import { fetchImages } from './API/service';
-import { Dna } from 'react-loader-spinner';
+import { ColorRing } from 'react-loader-spinner';
 import 'react-toastify/dist/ReactToastify.css';
 import Searchbar from './Searchbar/Searchbar';
 import Button from './Button/Button';
@@ -81,7 +81,7 @@ class App extends Component {
         {totalHits > images.length && !isLoading && (
           <Button onLoadMoreButton={this.onLoadMoreButton} />
         )}
-        {isLoading && <Dna wrapperStyle={{ margin: '0 auto' }} />}
+        {isLoading && <ColorRing wrapperStyle={{ margin: '0 auto' }} />}
         {activeImage && (
           <Modal image={activeImage} onClose={this.onImageClick}></Modal>
         )}
